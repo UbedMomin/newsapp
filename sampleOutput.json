@@ -1,0 +1,45 @@
+{
+  "status": "ok",
+  "totalResults": 3,
+  "articles": [
+    {
+      "source": {
+        "id": "bbc-news",
+        "name": "BBC News"
+      },
+      "author": "BBC News",
+      "title": "Global Markets Rally as Tech Stocks Surge",
+      "description": "Technology stocks led the rally with major indices closing at record highs.",
+      "url": "https://www.bbc.com/news/business-12345678",
+      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/1234.jpg",
+      "publishedAt": "2025-08-01T08:30:00Z",
+      "content": "Global markets saw a significant uptick today, driven by gains in the tech sector..."
+    },
+    {
+      "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+      },
+      "author": "Jane Doe",
+      "title": "Apple's Latest iPhone Comes with Radical New Features",
+      "description": "Apple unveils the iPhone 17 Pro Max with foldable design and AI features.",
+      "url": "https://www.theverge.com/2025/08/01/apple-iphone-17-launch",
+      "urlToImage": "https://cdn.theverge.com/2025/08/01/iphone17.jpg",
+      "publishedAt": "2025-08-01T07:00:00Z",
+      "content": "Apple has officially revealed the iPhone 17 Pro Max today in its annual fall event..."
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "TechCrunch"
+      },
+      "author": "John Smith",
+      "title": "AI Startups Receive Record Funding in 2025",
+      "description": "VCs are pouring billions into AI-driven startups with high growth potential.",
+      "url": "https://techcrunch.com/2025/08/01/ai-startup-funding-boom",
+      "urlToImage": "https://techcrunch.com/image/ai-funding-2025.jpg",
+      "publishedAt": "2025-08-01T06:15:00Z",
+      "content": "Artificial Intelligence remains a hot sector for investors, with several startups..."
+    }
+  ]
+}
