@@ -1,41 +1,27 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export class NavBar extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-          <div className="container-fluid">
-            <a className="navbar-brand" href="/">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div className="container-fluid d-flex align-items-center">
+            {/* Brand */}
+            <Link className="navbar-brand me-4" to="/">
               NewsMonkey
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="/">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/about">
-                    About
-                  </a>
-                </li>
-              </ul>
+            </Link>
+
+            {/* Nav Links in a horizontal row */}
+            <div className="d-flex flex-row">
+              <Link className="nav-link text-white px-3" to="/">Home</Link>
+              <Link className="nav-link text-white px-3" to="/about">About</Link>
+              <Link className="nav-link text-white px-3" to="/crime">Crime</Link>
+              <Link className="nav-link text-white px-3" to="/domestic">Domestic</Link>
+              <Link className="nav-link text-white px-3" to="/education">Education</Link>
+              <Link className="nav-link text-white px-3" to="/entertainment">Entertainment</Link>
+              <Link className="nav-link text-white px-3" to="/environment">Environment</Link>
+              <Link className="nav-link text-white px-3" to="/food">Food</Link>
             </div>
           </div>
         </nav>
