@@ -23,13 +23,12 @@ export class News extends Component {
       articles: [],
       loading: false,
       nextPage: null,
+      page: 1,
     };
   }
 
-  async componentDidMount() {
-    console.log("News component mounted");
-
-    const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=top&category=${this.props.category}&apikey=pub_42cfb884a4134fc7b8448a7fc7ec3206`;
+  async updateNews() {
+    const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=${this.props.category}&apikey=pub_42cfb884a4134fc7b8448a7fc7ec3206&page=${this.state.page}`;
     this.setState({ loading: true });
 
     try {
@@ -48,31 +47,16 @@ export class News extends Component {
     }
   }
 
+  async componentDidMount() {
+    console.log("News component mounted");
+    this.updateNews(); // Call the same method on mount
+  }
+
   handleNextClick = async () => {
-    console.log("Next button clicked");
-
-    if (!this.state.nextPage) {
-      alert("No more news pages available.");
-      return;
-    }
-
-    const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=top&category=${this.props.category}&apikey=pub_42cfb884a4134fc7b8448a7fc7ec3206&page=${this.state.nextPage}`;
-    this.setState({ loading: true });
-
-    try {
-      let response = await fetch(url);
-      let data = await response.json();
-      console.log(data);
-
-      this.setState({
-        articles: Array.isArray(data.results) ? data.results : [],
-        loading: false,
-        nextPage: data.nextPage || null,
-      });
-    } catch (error) {
-      console.error("Error fetching next page:", error);
-      this.setState({ loading: false });
-    }
+    this.setState(
+      (prevState) => ({ page: prevState.page + 1 }),
+      () => this.updateNews() // update after setting new page
+    );
   };
 
   render() {
@@ -92,8 +76,8 @@ export class News extends Component {
                   imageUrl={element.image_url}
                   newsUrl={element.url}
                   author={element.author}
-                  date={element.publishedAt} 
-                  source={element.source?.name}// or correct property name
+                  date={element.publishedAt}
+                  source={element.source?.name}
                 />
               </div>
             ))
