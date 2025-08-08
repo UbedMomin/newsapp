@@ -47,10 +47,10 @@ const News = (props) => {
   };
 
   return (
-    <div className="container my-3">
-      <h1 className="text-center">
-        Top {capitalizeFirstLetter(props.category)} Headlines
-      </h1>
+  <div className="container my-3">
+    <h1 className="text-center" style={{ marginTop: "90px" }}>
+      Top {capitalizeFirstLetter(props.category)} Headlines
+    </h1>
 
       {loading && <Spinner />}
 

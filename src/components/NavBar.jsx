@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const NavBar= ()=>{    
   // functipn based component for NavBar
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
           <div className="container-fluid d-flex align-items-center">
             {/* Brand */}
             <Link className="navbar-brand me-4" to="/">
